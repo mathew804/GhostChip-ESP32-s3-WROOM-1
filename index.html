@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GHOST CHIP — ESP32-S3 Lab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><span>⚡</span><b>GHOST CHIP</b><small>ESP32-S3 LAB</small></div>
+  <button class="nav active" data-page="dashboard">⌂ Dashboard</button>
+  <button class="nav" data-page="device">◈ 3D Device</button>
+  <button class="nav" data-page="script">⌘ Script Lab</button>
+  <button class="nav" data-page="network">⌁ Network Lab</button>
+  <button class="nav" data-page="storage">▣ Storage</button>
+  <button class="nav" data-page="learning">◉ Learning Center</button>
+  <button class="nav" data-page="settings">⚙ Settings</button>
+  <div class="sidefoot">Authorized lab use only<br><span>v1.0 • ESP32-S3</span></div>
+</aside>
+
+<main>
+<header><div><span class="eyebrow">LOCAL DEVICE CONSOLE</span><h1 id="title">Dashboard</h1></div><div class="status"><i></i> ONLINE <span>ghostchip.local</span></div></header>
+
+<section id="dashboard" class="page active">
+  <div class="hero">
+    <div><span class="tag">ESP32-S3 • USB • Wi-Fi • BLE</span><h2>Learn your<br><em>GhostChip.</em></h2>
+    <p>A modern control and learning interface inspired by the GhostChipUI concept, with a safe lab-focused toolkit.</p>
+    <button class="primary" onclick="showPage('device')">Explore 3D Device →</button></div>
+    <div class="mini3d"><div class="pcb"><div class="usb"></div><div class="module">ESP32-S3<br><small>WROOM-1</small></div><div class="led"></div><b>GHOSTCHIP</b></div></div>
+  </div>
+  <div class="cards">
+    <article><span>CPU</span><b>Dual-core LX7</b><small>Up to 240 MHz</small></article>
+    <article><span>WIRELESS</span><b>Wi-Fi + BLE</b><small>2.4 GHz Wi-Fi</small></article>
+    <article><span>USB</span><b>Native USB</b><small>GPIO19 / GPIO20</small></article>
+    <article><span>STORAGE</span><b>microSD</b><small>Board-dependent wiring</small></article>
+  </div>
+</section>
+
+<section id="device" class="page">
+ <div class="sectionhead"><div><span class="eyebrow">HARDWARE</span><h2>Interactive 3D Device</h2></div><button class="ghost" onclick="flip()">↻ Rotate</button></div>
+ <div class="devicegrid">
+  <div class="stage"><div id="model" class="model"><div class="face front"><span class="usb">USB-A</span><span class="chip">ESP32-S3<br><small>WROOM-1</small></span><span class="dot">●</span><b>GHOSTCHIP</b></div><div class="face back">microSD<br><small>STORAGE</small></div></div></div>
+  <div class="panel"><h3>Hardware Map</h3><div class="row"><b>ESP32-S3</b><span>Main MCU + Wi-Fi + BLE + USB</span></div><div class="row"><b>USB</b><span>Power / native USB interface</span></div><div class="row"><b>GPIO19</b><span>USB D−</span></div><div class="row"><b>GPIO20</b><span>USB D+</span></div><div class="row"><b>microSD</b><span>Storage; verify exact PCB wiring</span></div><div class="warning">⚠ Never put 5 V directly on ESP32 GPIO.</div></div>
+ </div>
+ <div class="photos"><img src="assets/ghostchip-front.jpeg"><img src="assets/ghostchip-back.jpeg"></div>
+</section>
+
+<section id="script" class="page">
+ <div class="sectionhead"><div><span class="eyebrow">SAFE LAB</span><h2>Script Lab</h2></div><span class="pill">SIMULATION ONLY</span></div>
+ <div class="editor"><div class="toolbar"><button onclick="insert('REM GhostChip learning demo\n')">Comment</button><button onclick="insert('DELAY 500\n')">Delay</button><button onclick="insert('STRING Hello from my ESP32-S3 lab!\n')">Type Text</button><button onclick="simulate()">▶ Simulate</button><button onclick="clearEditor()">Clear</button></div><textarea id="code">REM GhostChip learning demo
+DELAY 500
+STRING Hello from my ESP32-S3 lab!
+ENTER</textarea><pre id="output">// simulator output appears here</pre></div>
+ <div class="ref"><b>DuckyScript learning reference</b><span>DELAY n</span><span>STRING text</span><span>ENTER</span><span>REM comment</span><span>REPEAT n</span></div>
+</section>
+
+<section id="network" class="page">
+ <div class="sectionhead"><div><span class="eyebrow">AUTHORIZED LAB</span><h2>Network Lab</h2></div></div>
+ <div class="labgrid"><article><b>Wi-Fi</b><p>Learn scanning concepts and connect only to your own test router.</p><button class="primary" onclick="demo('Wi-Fi lab: simulated scan complete — no real networks accessed.')">Simulate Scan</button></article><article><b>Bluetooth LE</b><p>Study advertisements, services and characteristics.</p><button class="primary" onclick="demo('BLE lab: simulated discovery complete.')">Simulate Scan</button></article><article><b>Packet Learning</b><p>Use Wireshark in an isolated lab to understand traffic.</p><button class="primary" onclick="demo('Packet lab ready.')">Open Lab</button></article></div>
+ <pre id="netout">// lab status</pre>
+</section>
+
+<section id="storage" class="page">
+ <div class="sectionhead"><div><span class="eyebrow">MICROSD</span><h2>Storage Explorer</h2></div></div>
+ <div class="files"><div>📁 /</div><div>📄 config.txt <small>project settings</small></div><div>📄 lab-log.txt <small>test data</small></div><div>📁 projects/ <small>your projects</small></div></div>
+</section>
+
+<section id="learning" class="page">
+ <div class="sectionhead"><div><span class="eyebrow">ROADMAP</span><h2>Learning Center</h2></div></div>
+ <div class="road"><article><b>01</b><h3>GPIO</h3><p>LEDs, buttons, inputs, outputs and PWM.</p></article><article><b>02</b><h3>Wi-Fi</h3><p>Connect to your own router and build a local web server.</p></article><article><b>03</b><h3>BLE</h3><p>Advertisements, services and characteristics.</p></article><article><b>04</b><h3>USB</h3><p>Descriptors, enumeration and HID concepts.</p></article><article><b>05</b><h3>microSD</h3><p>Read, write and log project data.</p></article><article><b>06</b><h3>Cyber Lab</h3><p>Practice only in isolated, authorized environments.</p></article></div>
+</section>
+
+<section id="settings" class="page">
+ <div class="sectionhead"><div><span class="eyebrow">CONFIGURATION</span><h2>Settings</h2></div></div>
+ <div class="settings"><label>Device name<input value="ghostchip.local"></label><label>Theme<select><option>Dark</option><option>Midnight</option></select></label><div class="warning">This static GitHub version is a UI/demo. It does not connect to or control a physical ESP32 automatically.</div></div>
+</section>
+</main></div>
+<script src="script.js"></script>
+</body></html>

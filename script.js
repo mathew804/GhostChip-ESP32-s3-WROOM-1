@@ -1,0 +1,8 @@
+const pages=[...document.querySelectorAll('.page')], nav=[...document.querySelectorAll('.nav')], title=document.getElementById('title');
+function showPage(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));nav.forEach(n=>n.classList.toggle('active',n.dataset.page===id));title.textContent=id==='script'?'Script Lab':id==='device'?'3D Device':id==='network'?'Network Lab':id==='storage'?'Storage Explorer':id==='learning'?'Learning Center':id==='settings'?'Settings':'Dashboard';window.scrollTo({top:0,behavior:'smooth'})}
+nav.forEach(n=>n.onclick=()=>showPage(n.dataset.page));
+const model=document.getElementById('model');function flip(){model.style.transform=model.style.transform.includes('180deg')?'rotateX(58deg) rotateZ(-22deg)':'rotateX(58deg) rotateZ(158deg)'}
+function insert(s){const e=document.getElementById('code');e.setRangeText(s,e.selectionStart,e.selectionEnd,'end');e.focus()}
+function clearEditor(){document.getElementById('code').value='';document.getElementById('output').textContent='// cleared'}
+function simulate(){const code=document.getElementById('code').value;let out=[];for(const l of code.split('\n')){if(l.startsWith('STRING '))out.push('TYPE: '+l.slice(7));else if(l.startsWith('DELAY '))out.push('WAIT: '+l.slice(6)+' ms');else if(l==='ENTER')out.push('KEY: ENTER');else if(l.startsWith('REM'))out.push('COMMENT: '+l.slice(4))}document.getElementById('output').textContent=out.join('\n')||'// nothing to simulate'}
+function demo(t){document.getElementById('netout').textContent='// '+t}

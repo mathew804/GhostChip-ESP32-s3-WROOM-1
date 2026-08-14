@@ -14,10 +14,6 @@
 
 <p align="center"><i>Animated hacker-style banner • ESP32-S3 • Wi-Fi • BLE • USB • microSD • NeoPixel</i></p>
 
-**📦 This ZIP is the complete GitHub package:** `README.md` + animated banner + board/product images. Upload the ZIP contents to your repository, keeping the `assets/` folder next to `README.md` so the images and animation render correctly.**
-
-> **Purpose:** This repository is a learning-focused documentation and development project for the GhostChip-style ESP32-S3 hardware and its companion web interface. Use security-testing functions only on systems, accounts and networks that you own or have explicit authorization to test.
-
 ---
 
 ## 📖 Table of Contents

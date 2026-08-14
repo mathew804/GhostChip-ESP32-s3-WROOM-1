@@ -12,7 +12,6 @@
   <a href="https://gamkers.github.io/GhostChipUI/">🌐 OPEN THE GHOSTCHIP WEB UI</a>
 </p>
 
-<p align="center"><i>Animated hacker-style banner • ESP32-S3 • Wi-Fi • BLE • USB • microSD • NeoPixel</i></p>
 
 ---
 

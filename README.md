@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://gamkers.github.io/GhostChipUI/">🌐 OPEN THE GHOSTCHIP WEB UI</a>
 </p>
-
+https://ghostesp.net/companion
 
 ---
 

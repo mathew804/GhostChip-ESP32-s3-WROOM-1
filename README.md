@@ -11,7 +11,8 @@
 <p align="center">
   <a href="https://gamkers.github.io/GhostChipUI/">🌐 OPEN THE GHOSTCHIP WEB UI</a>
 </p>
-https://ghostesp.net/companion
+Flash App 2
+           https://ghostesp.net/companion
 
 ---
 
